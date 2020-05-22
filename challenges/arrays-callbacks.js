@@ -48,26 +48,27 @@ const lowCaseAnimalNames = [];
 
 zooAnimals.map(function(item){
  
-  return lowCaseAnimalNames.push(item.animal_name)
- 
- });
- 
- console.log(lowCaseAnimalNames);
+ return lowCaseAnimalNames.push(item.animal_name)
+
+});
+
+console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-// const lowPopulationAnimals = [];
-// console.log(lowPopulationAnimals);
+
+let lowPopulationAnimals = [];
+
+lowPopulationAnimals = zooAnimals.filter(function(item){
+return (item.population < 5);
+})
 
 
-let animals = zooAnimals.filter(function(item){
-  return (item.population < 5);
-  })
-  
-  console.log(animals);
+console.log(lowPopulationAnimals);
+
 
 /* Request 4: .reduce() 
 
@@ -86,7 +87,7 @@ let sum = zooAnimals.reduce(function(result,total){
 console.log(populationTotal);
 
 
-// console.log(populationTotal);
+
 
 // ==== Callbacks ====  
 
@@ -96,17 +97,26 @@ console.log(populationTotal);
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
-
-
-
-
-
+function consume (a,b,cb){
+  return cb(a,b);
+  }
+  
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+function add(a,b){
+  return a+b;
+ }
+ function multiply(a,b){
+  return a*b
+ }
+ function greeting(a,b){
+  return `Hello ${a} ${b}, nice to meet you!`
+ }
+ 
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 console.log(consume(2, 2, add)); // 4
@@ -121,4 +131,55 @@ console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice t
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
+
+const displayNames = [];
+
+zooAnimals.forEach((item)=> {
+return displayNames.push({"animal_name": item.animal_name, "scientific_name": item.scientific_name})
+});
+
+console.log(displayNames);
+
+
+
+
+
+
+const lowCaseAnimalNames = [];
+
+zooAnimals.map((item)=>{
+ 
+ return lowCaseAnimalNames.push(item.animal_name)
+
+});
+
+console.log(lowCaseAnimalNames);
+
+
+
+
+
+
+let lowPopulationAnimals = [];
+
+lowPopulationAnimals = zooAnimals.filter((item)=>{
+return (item.population < 5);
+})
+
+
+console.log(lowPopulationAnimals);
+
+
+
+
+
+let populationTotal = 0;
+
+let sum = zooAnimals.reduce((result,total)=>{
+  return (result += total.population);
+}, 0)
+
+ populationTotal = populationTotal + sum;
+
+console.log(populationTotal);
 

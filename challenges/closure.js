@@ -18,6 +18,8 @@ myFunction();
 
 // Explanation: 
 
+// nestedFunction has access to the variable internal because it is nested inside and within the scope of the parent function, so nestedFunction is like a child function
+//that has the ability to inherit from the parent function.
 
 /* Task 2: Counter */
 
