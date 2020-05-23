@@ -18,7 +18,19 @@ myFunction();
 
 // Explanation: 
 
+// nestedFunction has access to the variable internal because it is nested inside and within the scope of the parent function, so nestedFunction is like a child function
+//that has the ability to inherit from the parent function.
 
 /* Task 2: Counter */
 
-/* Create a function called `sumation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+/* Create a function called `sumation` that accepts a parameter and uses a counter to return the summation of that number. For example, 
+`summation(4)` should return 10 because 1+2+3+4 is 10. */
+
+function sumation(num){
+  result = 0;
+  for ( let i =0; i<=num; i++){
+    result = result + i;
+  }
+  return result;
+  }
+  sumation(4)
