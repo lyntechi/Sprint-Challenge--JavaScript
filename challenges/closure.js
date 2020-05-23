@@ -27,7 +27,10 @@ myFunction();
 `summation(4)` should return 10 because 1+2+3+4 is 10. */
 
 function sumation(num){
-  return num+num;
-}
-
-sumation(4)
+  result = 0;
+  for ( let i =0; i<=num; i++){
+    result = result + i;
+  }
+  return result;
+  }
+  sumation(4)
